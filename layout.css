@@ -1,0 +1,207 @@
+/* =========================================
+   1. PREMIUM DESIGN TOKENS
+   ========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap');
+
+:root {
+  /* Brand Palette */
+  --brand-navy: #0F172A;       /* Midnight Navy */
+  --brand-teal: #0891B2;       /* Medical Teal */
+  --brand-white: #FFFFFF;
+  --brand-slate: #94A3B8;      /* Muted Text */
+  
+  /* UI Elements */
+  --glass-bg: rgba(15, 23, 42, 0.9);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-glow: 0 0 20px rgba(8, 145, 178, 0.3);
+  
+  /* Spacing */
+  --container-width: 1200px;
+  --header-height: 80px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  color: #334155;
+  background-color: #F8FAFC;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* =========================================
+   2. LAYOUT UTILITIES
+   ========================================= */
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+a { text-decoration: none; transition: all 0.3s ease; }
+ul { list-style: none; padding: 0; margin: 0; }
+
+/* =========================================
+   3. HEAD-TURNING HEADER (Glassmorphism)
+   ========================================= */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--glass-border);
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+}
+
+.nav-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* Logo Styling */
+.logo {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--brand-white);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.logo span { color: var(--brand-teal); } /* Optional: Wrap part of logo in <span> for color */
+
+/* Nav Links */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav a {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--brand-slate);
+  position: relative;
+}
+
+.nav a:hover {
+  color: var(--brand-white);
+  text-decoration: none;
+}
+
+/* The Money Button (CTA) */
+.nav a.cta-button {
+  background: linear-gradient(135deg, var(--brand-teal) 0%, #06b6d4 100%);
+  color: var(--brand-white) !important;
+  padding: 10px 24px;
+  border-radius: 50px;
+  font-weight: 700;
+  box-shadow: var(--shadow-glow);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.nav a.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(8, 145, 178, 0.5);
+}
+
+/* =========================================
+   4. AUTHORITY FOOTER (Dark Mode)
+   ========================================= */
+.site-footer {
+  background-color: var(--brand-navy);
+  color: var(--brand-slate);
+  padding: 80px 0 0;
+  margin-top: 80px;
+  border-top: 4px solid var(--brand-teal); /* Top Accent Line */
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr; /* Asymmetrical Layout */
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+/* Typography upgrades */
+.footer-grid h4 {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--brand-white);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 24px;
+  font-weight: 700;
+}
+
+/* Links */
+.footer-grid a {
+  color: var(--brand-slate);
+  font-size: 14px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.footer-grid a:hover {
+  color: var(--brand-teal);
+  transform: translateX(5px); /* Slide effect */
+}
+
+/* Disclaimer text adjustment */
+.footer-grid p {
+  font-size: 14px;
+  line-height: 1.8;
+  opacity: 0.8;
+}
+
+/* Bottom Bar */
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 30px 0;
+  text-align: center;
+  font-size: 12px;
+  opacity: 0.6;
+  letter-spacing: 0.5px;
+}
+
+/* =========================================
+   5. RESPONSIVE DESIGN
+   ========================================= */
+@media (max-width: 900px) {
+  .nav { display: none; } /* Requires JS hamburger menu for full mobile */
+  
+  .site-header { justify-content: center; }
+  
+  .footer-grid {
+    grid-template-columns: 1fr 1fr; /* 2 Column on tablet */
+    gap: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-grid {
+    grid-template-columns: 1fr; /* Stack on mobile */
+    text-align: center;
+  }
+  
+  .footer-grid h4 {
+    margin-top: 30px;
+    color: var(--brand-teal);
+  }
+  
+  .nav-wrap { padding: 0 15px; }
+                                                                        }
+  
