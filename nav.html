@@ -1,0 +1,141 @@
+<style>
+  /* NAVIGATION STYLES */
+  :root {
+    --nav-bg: rgba(15, 23, 42, 0.95); /* Midnight Navy with transparency */
+    --nav-text: #94A3B8;              /* Slate Grey */
+    --nav-hover: #FFFFFF;             /* White */
+    --nav-trust: #0891B2;             /* Medical Teal */
+    --nav-glow: 0 0 15px rgba(8, 145, 178, 0.4);
+  }
+
+  .site-header {
+    background: var(--nav-bg);
+    backdrop-filter: blur(12px); /* The "Frosted Glass" Effect */
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 15px 0;
+    transition: all 0.3s ease;
+  }
+
+  .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* LOGO DESIGN */
+  .logo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .logo span {
+    color: var(--nav-trust);
+  }
+
+  /* NAV LINKS */
+  .nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+  }
+
+  .nav-link {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--nav-text);
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+    position: relative;
+  }
+
+  .nav-link:hover {
+    color: var(--nav-hover);
+  }
+
+  /* Active State Indicator (Optional) */
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--nav-trust);
+    transition: width 0.3s ease;
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+  /* THE MONEY BUTTON (CTA) */
+  .nav-cta {
+    background: linear-gradient(135deg, var(--nav-trust) 0%, #06b6d4 100%);
+    color: white !important;
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 13px;
+    box-shadow: var(--nav-glow);
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .nav-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 25px rgba(8, 145, 178, 0.6);
+  }
+  
+  .nav-cta::after { display: none; } /* Remove underline from button */
+
+  /* MOBILE HAMBURGER (Simple CSS Only Implementation) */
+  .mobile-toggle { display: none; font-size: 24px; color: white; cursor: pointer; }
+
+  @media (max-width: 900px) {
+    .nav-menu { display: none; } /* Hidden on mobile for now */
+    .mobile-toggle { display: block; }
+    /* Note: Full mobile menu requires a tiny bit of JS, keeping this CSS-only for safety */
+  }
+</style>
+
+<header class="site-header">
+  <div class="nav-container">
+    
+    <a class="logo" href="/">
+      Neural Safety <span>Lab</span>
+    </a>
+
+    <nav class="nav-menu">
+      <a href="/learn" class="nav-link">Methodology</a>
+      <a href="/articles" class="nav-link">Articles</a>
+      <a href="/about" class="nav-link">About</a>
+      
+      <div style="width: 1px; height: 24px; background: rgba(255,255,255,0.1);"></div>
+
+      <a href="/conditioning" class="nav-link" style="color: white;">Conditioning</a>
+      <a href="/protocol" class="nav-link nav-cta">GET THE PROTOCOL</a>
+    </nav>
+
+    <div class="mobile-toggle">☰</div>
+
+  </div>
+  </header>
+  
