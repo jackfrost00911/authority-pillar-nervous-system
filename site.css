@@ -1,0 +1,126 @@
+/* =========================================
+   TESTIMONIALS (Social Proof)
+   ========================================= */
+.testimonials {
+  margin: 60px 0;
+  position: relative;
+}
+
+.t-grid {
+  display: grid;
+  gap: 30px; /* Increased gap for breathing room */
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+.t-card {
+  background: #fff;
+  border: 1px solid #F1F5F9;
+  border-top: 4px solid #0891B2; /* Brand Teal Accent */
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.t-card:hover {
+  transform: translateY(-5px); /* "Head turning" lift effect */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.t-quote {
+  font-family: 'Merriweather', serif; /* Editorial feel */
+  font-style: italic;
+  font-size: 16px;
+  color: #334155;
+  line-height: 1.6;
+  margin: 0 0 20px;
+}
+
+.t-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #0891B2; /* Teal Name */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: block;
+}
+
+/* =========================================
+   FAQ (Interactive Accordion)
+   ========================================= */
+.faq {
+  margin: 60px 0;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.faq details {
+  background: #fff;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+/* Active State (When Open) */
+.faq details[open] {
+  border-color: #0891B2; /* Highlight border when open */
+  box-shadow: 0 4px 12px rgba(8, 145, 178, 0.1);
+}
+
+.faq summary {
+  padding: 20px;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  color: #0F172A; /* Navy */
+  font-size: 16px;
+  list-style: none; /* Hide default arrow */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.2s;
+}
+
+.faq summary:hover {
+  background-color: #F8FAFC;
+}
+
+/* Hide default marker in Chrome/Safari */
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Custom Plus Icon using CSS */
+.faq summary::after {
+  content: '+';
+  font-size: 24px;
+  color: #0891B2;
+  font-weight: 300;
+  line-height: 1;
+  transition: transform 0.2s;
+}
+
+/* Change Plus to Minus when open */
+.faq details[open] summary::after {
+  content: '-';
+  color: #0F172A;
+}
+
+/* The Answer Text */
+.faq p {
+  margin: 0;
+  padding: 0 20px 20px 20px;
+  color: #64748B;
+  font-size: 15px;
+  line-height: 1.6;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
