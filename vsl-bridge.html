@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Masterclass: The Neural Safety Switch | Structure & State</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="layout.css">
+<link rel="stylesheet" href="styles.css">
+
+<style>
+  /* PAGE SPECIFIC STYLES */
+  
+  /* Hero / Video Section */
+  .vsl-hero {
+    text-align: center;
+    padding: 60px 20px 40px;
+    background: linear-gradient(to bottom, #F8FAFC 0%, #ffffff 100%);
+  }
+
+  .badge {
+    display: inline-block;
+    background: rgba(8, 145, 178, 0.1);
+    color: var(--brand-teal);
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 1px solid rgba(8, 145, 178, 0.3);
+    margin-bottom: 20px;
+  }
+
+  .headline-wrap {
+    max-width: 800px;
+    margin: 0 auto 40px;
+  }
+
+  h1 {
+    font-size: 36px;
+    line-height: 1.2;
+    margin-bottom: 15px;
+    color: var(--brand-navy);
+  }
+
+  .sub-head {
+    font-size: 20px;
+    color: #64748B;
+    font-weight: 400;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  /* The "Cinema" Video Wrapper */
+  .video-container {
+    max-width: 900px;
+    margin: 0 auto 50px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px -10px rgba(15, 23, 42, 0.3);
+    border: 1px solid rgba(0,0,0,0.1);
+    background: #000;
+    position: relative;
+    z-index: 10;
+  }
+
+  .video-container iframe {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border: 0;
+    display: block;
+  }
+
+  /* Agenda Card */
+  .agenda-card {
+    background: white;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px;
+    border-radius: 12px;
+    border-top: 5px solid var(--brand-teal);
+    box-shadow: var(--shadow-soft);
+    text-align: left;
+  }
+
+  .agenda-card h3 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .benefit-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .benefit-list li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #334155;
+  }
+
+  .benefit-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--brand-teal);
+    font-weight: 800;
+  }
+
+  /* Primary CTA */
+  .vsl-cta {
+    margin: 40px 0;
+    text-align: center;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background: var(--brand-navy);
+    color: white;
+    padding: 20px 40px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 10px 20px rgba(15, 23, 42, 0.2);
+    border-bottom: 4px solid #000;
+    transition: transform 0.2s;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(15, 23, 42, 0.3);
+  }
+
+  .sub-cta-text {
+    display: block;
+    margin-top: 15px;
+    font-size: 13px;
+    color: #94A3B8;
+  }
+
+  /* Blog Section Override */
+  .blog-section {
+    background: #F1F5F9;
+    padding: 80px 0;
+    border-top: 1px solid #E2E8F0;
+  }
+  
+  .post-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+  }
+
+  .blog-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #E2E8F0;
+    transition: transform 0.2s;
+  }
+  
+  .blog-card:hover { transform: translateY(-5px); border-color: var(--brand-teal); }
+  .blog-card h4 { font-family: 'Montserrat', sans-serif; font-size: 18px; margin-bottom: 10px; color: var(--brand-navy); }
+  .blog-card p { font-size: 14px; color: #64748B; margin-bottom: 20px; line-height: 1.6; }
+  .read-link { color: var(--brand-teal); font-weight: 700; font-size: 13px; text-transform: uppercase; }
+
+  @media(max-width: 768px) {
+    h1 { font-size: 28px; }
+    .sub-head { font-size: 18px; }
+    .agenda-card { padding: 25px; }
+    .btn-primary { width: 100%; box-sizing: border-box; font-size: 18px; }
+  }
+</style>
+</head>
+
+<body>
+
+<div id="header-placeholder"></div>
+
+<main>
+
+  <section class="vsl-hero">
+    <div class="container">
+      
+      <span class="badge">Training Session • 14 Minutes</span>
+      
+      <div class="headline-wrap">
+        <h1>Stop Managing Anxiety.<br>Start Switching It Off.</h1>
+        <p class="sub-head">The biological framework for overriding the fight-or-flight response—mechanically, not mentally.</p>
+      </div>
+
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/REPLACE_WITH_YOUR_ID?rel=0&modestbranding=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+
+      <div class="agenda-card">
+        <h3>In This Session You Will Discover:</h3>
+        <ul class="benefit-list">
+          <li><strong>The Hardware Gap:</strong> Why your body stays "stuck on alert" even when your mind wants to relax.</li>
+          <li><strong>The "Vagus Pinch":</strong> The hidden structural reflex that blocks safety signals from reaching your brain.</li>
+          <li><strong>The 3-Step Protocol:</strong> How to condition your nervous system to switch states in under 10 minutes.</li>
+        </ul>
+      </div>
+
+      <div class="vsl-cta">
+        <a href="https://yourname.gumroad.com/l/yourproduct" class="btn-primary">Unlock The Neural Safety Switch™</a>
+        <span class="sub-cta-text">Instant Digital Access • 60-Day Money Back Guarantee</span>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="blog-section">
+    <div class="container">
+      <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+        <h2 style="font-family: 'Montserrat'; color: var(--brand-navy);">Further Reading</h2>
+        <p>Not ready to start the protocol? Explore the science behind the system.</p>
+      </div>
+
+      <div class="post-grid">
+        
+        <article class="blog-card">
+          <a href="/blog/anxiety-physical.html">
+            <h4>Why Anxiety Feels Physical</h4>
+            <p>It’s not in your head—it’s in your nervous system. Understand the biology of the "False Alarm."</p>
+            <span class="read-link">Read Article &rarr;</span>
+          </a>
+        </article>
+
+        <article class="blog-card">
+          <a href="/blog/relaxation-vs-regulation.html">
+            <h4>Relaxation vs. Regulation</h4>
+            <p>Why trying to "force" calm actually creates more stress, and what to do instead.</p>
+            <span class="read-link">Read Article &rarr;</span>
+          </a>
+        </article>
+
+        <article class="blog-card">
+          <a href="/blog/index.html">
+            <h4>The Knowledge Hub</h4>
+            <p>Browse our full library of articles on nervous system health, sleep, and recovery.</p>
+            <span class="read-link">View Library &rarr;</span>
+          </a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script>
+  function loadHTML(id, file) {
+    fetch(file)
+      .then(response => {
+        if (!response.ok) throw new Error("Network response was not ok");
+        return response.text();
+      })
+      .then(data => document.getElementById(id).innerHTML = data)
+      .catch(error => console.error('Error loading partial:', error));
+  }
+
+  // Load Nav and Footer
+  loadHTML('header-placeholder', 'nav.html');
+  loadHTML('footer-placeholder', 'footer.html');
+</script>
+
+</body>
+  </html>
+  
