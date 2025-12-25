@@ -1,0 +1,269 @@
+/* =========================================
+   1. DESIGN SYSTEM (COLORS & VARIABLES)
+   ========================================= */
+:root {
+    --primary: #0F172A;       /* Midnight Navy */
+    --primary-light: #1E293B; /* Lighter Navy */
+    --trust: #0891B2;         /* Clinical Teal */
+    --accent: #E11D48;        /* Action Red */
+    --bg-body: #F8FAFC;       /* Off-White Medical */
+    --text-main: #334155;     /* Slate Grey */
+    --text-light: #94A3B8;    /* Light Grey */
+    --white: #FFFFFF;
+    --shadow-card: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-glow: 0 0 20px rgba(8, 145, 178, 0.4);
+    --radius: 12px;
+}
+
+/* =========================================
+   2. BASE STYLES
+   ========================================= */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    line-height: 1.7;
+    font-size: 18px;
+    overflow-x: hidden;
+}
+
+a { text-decoration: none; transition: 0.3s ease; }
+ul { list-style: none; }
+
+/* TYPOGRAPHY */
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--primary);
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+}
+
+/* =========================================
+   3. NAVIGATION
+   ========================================= */
+header {
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    color: var(--white);
+    font-weight: 800;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+nav a {
+    color: var(--text-light);
+    font-weight: 600;
+    margin-left: 30px;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+nav a:hover { color: var(--trust); }
+
+/* =========================================
+   4. HERO SECTION (The "Head Turner")
+   ========================================= */
+.hero {
+    background: linear-gradient(135deg, var(--primary) 0%, #000000 100%);
+    color: var(--white);
+    padding: 100px 20px 140px; /* Extra bottom padding for overlap */
+    text-align: center;
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+}
+
+.hero h1 {
+    font-size: 48px;
+    font-weight: 800;
+    color: var(--white);
+    margin-bottom: 20px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero p {
+    font-size: 22px;
+    color: var(--text-light);
+    max-width: 700px;
+    margin: 0 auto 40px;
+}
+
+.hero-tag {
+    background: rgba(8, 145, 178, 0.2);
+    color: var(--trust);
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 1px solid rgba(8, 145, 178, 0.5);
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+/* =========================================
+   5. MAIN CONTENT GRID
+   ========================================= */
+.content-wrapper {
+    max-width: 1100px;
+    margin: -80px auto 60px; /* Pulls content UP into the hero */
+    padding: 0 20px;
+    position: relative;
+    z-index: 10;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+/* CARD STYLES */
+.card {
+    background: var(--white);
+    padding: 40px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-card);
+    border-top: 5px solid var(--trust);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: #64748B;
+    font-size: 16px;
+}
+
+/* COMPARISON BOX */
+.comparison-box {
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-card);
+    margin-top: 30px;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.state-col {
+    flex: 1;
+    padding: 40px;
+    min-width: 300px;
+}
+
+.state-alert {
+    background: #FFF1F2; /* Light Red tint */
+    border-right: 1px solid #FFE4E6;
+}
+
+.state-safe {
+    background: #ECFEFF; /* Light Teal tint */
+}
+
+.state-title {
+    font-weight: 800;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.alert-text { color: var(--accent); }
+.safe-text { color: var(--trust); }
+
+/* =========================================
+   6. CALL TO ACTION (CTA)
+   ========================================= */
+.cta-section {
+    background: var(--primary);
+    color: white;
+    padding: 60px;
+    text-align: center;
+    border-radius: var(--radius);
+    margin-top: 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle background pattern */
+.cta-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.1) 1px, transparent 0);
+    background-size: 20px 20px;
+    opacity: 0.5;
+}
+
+.button {
+    display: inline-block;
+    background: linear-gradient(to right, var(--trust), #06b6d4);
+    color: white;
+    padding: 18px 40px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 18px;
+    margin-top: 30px;
+    box-shadow: var(--shadow-glow);
+    border-bottom: 4px solid #0e7490;
+    position: relative;
+    z-index: 5;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    filter: brightness(110%);
+}
+
+/* =========================================
+   7. FOOTER
+   ========================================= */
+footer {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--text-light);
+    font-size: 14px;
+    border-top: 1px solid #e2e8f0;
+    margin-top: 60px;
+}
+
+/* MOBILE TWEAKS */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 32px; }
+    .hero p { font-size: 18px; }
+    .grid { grid-template-columns: 1fr; }
+    .comparison-box { flex-direction: column; }
+    .nav-container { flex-direction: column; gap: 15px; }
+    nav a { margin: 0 10px; }
+}
