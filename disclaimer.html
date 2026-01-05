@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disclaimer | Structure & State</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <style>
+        /* Specific styles for legal pages to keep them clean */
+        .legal-container {
+            max-width: 800px;
+            margin: 60px auto 100px;
+            padding: 0 20px;
+            font-family: 'Open Sans', sans-serif;
+            color: #334155;
+            line-height: 1.8;
+        }
+        .legal-container h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            color: #0F172A;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .legal-container h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: #0F172A;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        .legal-container p {
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+        .return-link {
+            display: inline-block;
+            margin-top: 40px;
+            color: #0891B2;
+            font-weight: 700;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .return-link:hover { text-decoration: underline; }
+    </style>
+</head>
+
+<body>
+
+<div id="header-placeholder"></div>
+
+<main class="legal-container">
+    
+    <h1>Disclaimer</h1>
+    <hr style="border: 0; border-top: 1px solid #E2E8F0; margin-bottom: 40px;">
+
+    <h3>1. Medical Disclaimer</h3>
+    <p>The content provided by Structure & State ("we," "us," or "our") on this website and in our digital products (including "The Neural Safety Switch Protocol" and "The 15-Minute Spinal Reset") is for informational and educational purposes only.</p>
+    <p><strong>We are not doctors, psychologists, or medical professionals.</strong></p>
+    <p>The information presented is not intended to represent or substitute for professional medical advice, diagnosis, or treatment. Never disregard professional medical advice or delay in seeking it because of something you have read on this website. If you are experiencing a medical emergency, mental health crisis, or thoughts of self-harm, contact your local emergency services immediately.</p>
+
+    <h3>2. Results Disclaimer</h3>
+    <p>We make every effort to ensure that we accurately represent these products and their potential for results. There is no guarantee that you will experience the same results as the examples given in our marketing materials. Examples of results found on this site are not typical. The results you achieve will depend on your individual effort, biological factors, and consistency.</p>
+
+    <h3>3. ClickBank Disclaimer</h3>
+    <p>ClickBank is the retailer of products on this site. CLICKBANK® is a registered trademark of Click Sales, Inc., a Delaware corporation located at 1444 S. Entertainment Ave., Suite 410 Boise, ID 83709, USA and used by permission. ClickBank's role as retailer does not constitute an endorsement, approval or review of these products or any claim, statement or opinion used in promotion of these products.</p>
+
+    <a href="index.html" class="return-link">&larr; Return to Home</a>
+
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script>
+  function loadHTML(id, file) {
+    fetch(file)
+      .then(response => { 
+        if (!response.ok) throw new Error("Network response was not ok"); 
+        return response.text(); 
+      })
+      .then(data => document.getElementById(id).innerHTML = data)
+      .catch(error => console.error('Error loading partial:', error));
+  }
+  
+  // Since this file is in the root, we use the direct path
+  loadHTML('header-placeholder', 'partials/nav.html');
+  loadHTML('footer-placeholder', 'partials/footer.html');
+</script>
+
+</body>
+  </html>
+  
