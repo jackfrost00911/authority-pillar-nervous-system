@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | Structure & State</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <style>
+        /* Specific styles for legal pages */
+        .legal-container {
+            max-width: 800px;
+            margin: 60px auto 100px;
+            padding: 0 20px;
+            font-family: 'Open Sans', sans-serif;
+            color: #334155;
+            line-height: 1.8;
+        }
+        .legal-container h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            color: #0F172A;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .legal-container h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: #0F172A;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        .legal-container p {
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+        .legal-container ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+        .legal-container li {
+            margin-bottom: 10px;
+        }
+        .return-link {
+            display: inline-block;
+            margin-top: 40px;
+            color: #0891B2;
+            font-weight: 700;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .return-link:hover { text-decoration: underline; }
+    </style>
+</head>
+
+<body>
+
+<div id="header-placeholder"></div>
+
+<main class="legal-container">
+    
+    <h1>Privacy Policy</h1>
+    <hr style="border: 0; border-top: 1px solid #E2E8F0; margin-bottom: 40px;">
+
+    <p><strong>Last Updated:</strong> December 2025</p>
+
+    <h3>1. Information We Collect</h3>
+    <p>When you purchase a product from Structure & State, we collect personal information such as your name and email address to deliver your digital products. We do not store your credit card information; all payments are processed securely through ClickBank.</p>
+
+    <h3>2. How We Use Your Information</h3>
+    <p>We use your information to:</p>
+    <ul>
+        <li>Deliver your purchased files via email.</li>
+        <li>Provide customer support.</li>
+        <li>Send you updates regarding the protocol or related offers (you may unsubscribe at any time).</li>
+    </ul>
+
+    <h3>3. Data Security</h3>
+    <p>We implement a variety of security measures to maintain the safety of your personal information. Your personal information is contained behind secured networks.</p>
+
+    <h3>4. Third-Party Disclosure</h3>
+    <p>We do not sell, trade, or otherwise transfer to outside parties your Personally Identifiable Information.</p>
+
+    <h3>5. Contact Us</h3>
+    <p>If there are any questions regarding this privacy policy, you may contact us at:<br>
+    <strong>structureandstate@mail.com</strong></p>
+
+    <a href="index.html" class="return-link">&larr; Return to Home</a>
+
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script>
+  function loadHTML(id, file) {
+    fetch(file)
+      .then(response => { 
+        if (!response.ok) throw new Error("Network response was not ok"); 
+        return response.text(); 
+      })
+      .then(data => document.getElementById(id).innerHTML = data)
+      .catch(error => console.error('Error loading partial:', error));
+  }
+  
+  loadHTML('header-placeholder', 'partials/nav.html');
+  loadHTML('footer-placeholder', 'partials/footer.html');
+</script>
+
+</body>
+</html>
