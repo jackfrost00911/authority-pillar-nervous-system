@@ -89,11 +89,23 @@
   </main>
 </div>
 <div id="footer-placeholder"></div>
-<script>
-function loadHTML(id, file) { fetch(file).then(r => r.text()).then(d => document.getElementById(id).innerHTML = d); }
-loadHTML('header-placeholder', 'nav.html');
-loadHTML('footer-placeholder', 'footer.html');
-</script>
+
+    <script>
+function loadHTML(id, file) {
+    fetch(file)
+      .then(response => { 
+        if (!response.ok) throw new Error("Network response was not ok"); 
+        return response.text(); 
+      })
+      .then(data => document.getElementById(id).innerHTML = data)
+      .catch(error => console.error('Error loading partial:', error));
+}
+
+// CHANGED: Added 'partials/' before the filename so it looks in the right folder
+loadHTML('header-placeholder', 'partials/nav.html');
+loadHTML('footer-placeholder', 'partials/footer.html');
+    </script>
+    
 </body>
       </html>
       
