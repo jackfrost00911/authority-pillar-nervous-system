@@ -215,10 +215,22 @@
 
 </main>
 
-<footer>
-    <p>Structure & State &copy; 2025</p>
-    <p style="opacity: 0.7; margin-top: 10px;">Educational content only. This is not medical advice.</p>
-</footer>
+<script>
+function loadHTML(id, file) {
+    fetch(file)
+      .then(response => { 
+        if (!response.ok) throw new Error("Network response was not ok"); 
+        return response.text(); 
+      })
+      .then(data => document.getElementById(id).innerHTML = data)
+      .catch(error => console.error('Error loading partial:', error));
+}
+
+// CHANGED: Added 'partials/' before the filename so it looks in the right folder
+loadHTML('header-placeholder', 'partials/nav.html');
+loadHTML('footer-placeholder', 'partials/footer.html');
+</script>
+    
 
 </body>
   </html>
