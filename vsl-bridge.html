@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#0F172A">
+
+    <title>The Neural Safety Switch™ Protocol | Structure & State</title>
+    <meta name="description" content="Stop managing anxiety. Start switching it off. The biological framework for overriding the fight-or-flight response.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    
+    <script src="https://gumroad.com/js/gumroad.js"></script>
+
+    <style>
+        /* --- VSL & Video Section Styles --- */
+        .hero-vsl { text-align:center; margin-top:30px; padding: 0 20px; }
+        .badge { display:inline-block; background:rgba(8, 145, 178, 0.1); color: #0891B2; padding: 8px 16px; border-radius: 50px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; border: 1px solid rgba(8, 145, 178, 0.3); margin-bottom: 25px;}
+        h1 { font-family: 'Montserrat', sans-serif; font-size: 2.5rem; margin: 10px 0 15px; color: #0F172A; line-height: 1.2;}
+        .sub { color: #64748B; max-width: 720px; margin: 0 auto 30px; font-size: 1.2rem; line-height: 1.6;}
+        
+        /* Video Container */
+        .video-wrapper {
+            max-width: 800px; 
+            margin: 0 auto 40px; 
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.3);
+            border: 4px solid #fff;
+        }
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; background: #000; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+        /* --- Sales Letter Content Styles --- */
+        .letter-container { max-width: 800px; margin: 0 auto; padding: 40px 20px; font-family: 'Open Sans', sans-serif; font-size: 18px; line-height: 1.8; color: #334155; }
+        .letter-container h2 { font-family: 'Montserrat', sans-serif; font-weight: 800; color: #0F172A; margin-top: 60px; text-align: center; text-transform: uppercase; font-size: 1.8rem; letter-spacing: -0.5px; }
+        .letter-container h3 { font-family: 'Montserrat', sans-serif; font-weight: 700; color: #0F172A; margin-top: 30px; font-size: 1.4rem; }
+        .letter-container p { margin-bottom: 25px; }
+        .bold { font-weight: 700; color: #0F172A; }
+        
+        /* Highlight Boxes */
+        .highlight-box { background: #F1F5F9; border-left: 5px solid #0F172A; padding: 30px; margin: 40px 0; font-style: italic; border-radius: 0 8px 8px 0; }
+        .highlight-box p { margin-bottom: 0; }
+        
+        /* Product Stack & Offer */
+        .product-stack { background: #F8FAFC; border: 2px solid #E2E8F0; border-radius: 16px; padding: 50px; text-align: center; margin-top: 60px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .check-list { text-align: left; margin: 30px auto; max-width: 550px; padding: 0; }
+        .check-list li { list-style: none; margin-bottom: 15px; position: relative; padding-left: 30px; }
+        .check-list li::before { content: '✓'; position: absolute; left: 0; color: #0891B2; font-weight: 800; }
+        
+        /* Pricing */
+        .price-strike { text-decoration: line-through; color: #94A3B8; font-size: 24px; }
+        .price-final { color: #0F172A; font-size: 60px; font-weight: 800; font-family: 'Montserrat', sans-serif; line-height: 1; margin: 10px 0; }
+        
+        /* Buttons */
+        .cta-button { display:inline-block; background-color: #0F172A; color: white; padding: 25px 50px; text-decoration: none; font-weight: 800; border-radius: 8px; font-size: 1.2rem; margin-top: 25px; font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 1px; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 10px 20px -5px rgba(15, 23, 42, 0.4); }
+        .cta-button:hover { transform: translateY(-3px); background-color: #1E293B; box-shadow: 0 15px 30px -5px rgba(15, 23, 42, 0.5); }
+
+        /* Guarantee & Bonuses */
+        .guarantee-box { border: 2px dashed #0F172A; padding: 40px; text-align: center; margin-top: 60px; border-radius: 12px; background: #fff; }
+        .bonus-grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin: 40px 0; }
+        .bonus-card { background: #fff; padding: 25px; border-radius: 8px; border: 1px solid #E2E8F0; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
+        .bonus-tag { color: #0891B2; font-weight: 800; font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase; display: block; margin-bottom: 10px; }
+
+        /* Mobile Adjustments */
+        @media(max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .cta-button { width: 100%; box-sizing: border-box; padding: 20px; font-size: 1rem; }
+            .letter-container { padding: 30px 20px; }
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="header-placeholder"></div>
+
+<main>
+    
+    <section class="hero-vsl">
+        <span class="badge">Training Video • Watch Now</span>
+        <h1>Stop Managing Anxiety.<br>Start Switching It Off.</h1>
+        <p class="sub">The biological framework for overriding the fight-or-flight response—mechanically, not mentally.</p>
+
+        <div class="video-wrapper">
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/XlOaoUr-MdA?rel=0&modestbranding=1&controls=1&showinfo=0" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+
+        <div style="margin-bottom: 60px;">
+            <a href="https://structureandstate.gumroad.com/l/yzgvvd" class="cta-button" data-gumroad-single-product="true">Unlock The Neural Safety Switch™</a>
+            <br>
+            <p style="margin-top: 15px; font-size: 0.9rem; color: #64748B;">Prefer to read? Scroll down for the full breakdown ↓</p>
+        </div>
+    </section>
+
+    <hr style="border: 0; border-top: 1px solid #E2E8F0;">
+
+    <div class="letter-container">
+        
+        <p class="bold">Dear Friend,</p>
+        
+        <p>Most people think anxiety starts in the mind. That’s why they try to think their way out of it.</p> 
+        <p>They try to breathe slower, repeat affirmations, or talk about it endlessly in therapy. And when none of that works, they assume something is wrong with <em>them</em>.</p>
+        
+        <div class="highlight-box">
+            <p class="bold">The Truth: Anxiety isn’t a thought problem. It’s a nervous system that is biologically stuck in the “ON” position.</p>
+        </div>
+
+        <p>Once that switch is stuck, no amount of positive thinking will shut it off. That’s why panic can hit when your life looks “fine.” That's why your body feels tense even when you know you’re safe.</p>
+
+        <h2>The "Hidden" Enemy: Modern Life</h2>
+        
+        <p>You are not broken. You are just over-stimulated.</p>
+        <p>Modern life quietly trains your body to stay on alert. Blue light from screens, excessive caffeine, slumped posture, and shallow breathing all send a constant stream of "danger signals" to your brainstem.</p>
+        
+        <p style="text-align: center; font-weight: 800; font-size: 22px; color: #0891B2;">So the goal isn’t to calm your thoughts. It’s to reset the system that creates them.</p>
+
+        <h2>Why "Calm" Feels Impossible</h2>
+        
+        <p>Most people wait until anxiety wrecks their sleep, focus, or relationships before they take it seriously. But once the nervous system stays overstimulated long enough, that tension starts to feel normal.</p>
+        <p><strong>Calm feels unfamiliar. Stress feels like home.</strong></p>
+        <p>The good news? This process is reversible. Your nervous system isn’t broken. It’s just been trained the wrong way. And training works in both directions.</p>
+
+        <div class="highlight-box" style="background: #fff; border-left: 5px solid #0891B2; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+            <h3>It's Hardware, Not Software</h3>
+            <p>Your body is constantly scanning for signals: Breathing patterns, Muscle tension, Posture, Light exposure.</p>
+            <p>These signals answer one question: <strong>“Am I safe right now?”</strong></p>
+            <p>If the answer is unclear, stress stays on.</p>
+        </div>
+
+        <h2>Introducing: The Neural Safety Switch™</h2>
+        
+        <p>Across neurology, physiology, and respiratory research, one idea kept appearing: Your nervous system has a built-in safety mechanism.</p>
+        <p>When it detects danger, stress turns on. When it detects safety, stress turns off.</p>
+        <p><strong>It is Binary. Automatic. No opinions involved.</strong></p>
+        
+        <p>Imagine stacking the <strong>right signals</strong> in the <strong>right order</strong> for just 10 minutes a day. That is exactly what this protocol does.</p>
+
+        <div class="product-stack">
+            <p style="font-size: 14px; letter-spacing: 2px; color: #64748B; font-weight: 700; text-transform: uppercase;">Official Release</p>
+            <h2 style="margin-top: 10px; border: none; font-size: 2.2rem;">The Neural Safety Switch™ Protocol</h2>
+            
+            <p style="text-align: center; margin-bottom: 30px;">A simple, step-by-step mechanical system to manually override the stress response.</p>
+
+            <ul class="check-list">
+                <li><strong>The Main Manual:</strong> The science of the "On" switch and the 3 Safety Signals you must know.</li>
+                <li><strong>The 10-Minute Daily Reset:</strong> A follow-along routine (Morning, Evening, and Emergency versions).</li>
+                <li><strong>The 14-Day Rewire Schedule:</strong> A printable calendar so you know exactly what to do.</li>
+                <li><strong>The Sleep Shutdown:</strong> How to power down the body naturally without pills.</li>
+            </ul>
+
+            <div class="bonus-grid">
+                <div class="bonus-card">
+                    <span class="bonus-tag">Bonus #1</span>
+                    <p class="bold" style="margin-bottom: 5px;">7 Instant Calming Moves</p>
+                    <p style="font-size: 15px; margin-bottom: 0;">Quick, 30-second physiological hacks to drop stress instantly.</p>
+                </div>
+                <div class="bonus-card">
+                    <span class="bonus-tag">Bonus #2</span>
+                    <p class="bold" style="margin-bottom: 5px;">The Panic Interrupt Script</p>
+                    <p style="font-size: 15px; margin-bottom: 0;">A specific sequence to stop a panic attack in its tracks.</p>
+                </div>
+            </div>
+
+            <hr style="border: 0; border-top: 1px dashed #CBD5E1; margin: 30px 0;">
+            
+            <div class="price-strike">$197.00</div>
+            <div class="price-final">$37</div>
+            <p style="font-size: 14px; text-transform: uppercase; color: #64748B; font-weight: 600;">One-Time Payment | Lifetime Access</p>
+            
+            <a href="https://structureandstate.gumroad.com/l/yzgvvd" class="cta-button" data-gumroad-single-product="true">Yes! I Want To Flip The Switch</a>
+            
+            <div style="margin-top: 20px; font-size: 13px; color: #94A3B8;">
+                Secure 256-Bit SSL Encryption • Instant Digital Download
+            </div>
+        </div>
+
+        <div class="guarantee-box">
+            <h3 style="margin-top: 0;">The 60-Day "Biology or Bust" Guarantee</h3>
+            <p>Try the protocol for a full 60 days. If you don’t feel calmer, more in control, or better able to shut anxiety off when it starts… Email us for a full refund.</p>
+            <p><strong>Biology doesn't care what you believe. It just works.</strong></p>
+        </div>
+
+        <div style="margin-top: 60px;">
+            <h2>Frequently Asked Questions</h2>
+            
+            <p class="bold">Q: Do I need any equipment?</p>
+            <p>A: No. The protocol uses your own body mechanics, breathing, and vision. You can do it anywhere.</p>
+
+            <p class="bold">Q: How much time does it take?</p>
+            <p>A: The core reset takes 10 minutes. Most people do it in the morning. There are also 30-second "spot treatments" you can use throughout the day.</p>
+
+            <p class="bold">Q: Is this meditation?</p>
+            <p>A: No. Meditation requires focus and mental effort. This is a physiological protocol. We are moving the body and changing breath rates to mechanically signal safety. No "clearing your mind" required.</p>
+        </div>
+
+        <div style="text-align: center; margin-top: 80px;">
+            <a href="https://structureandstate.gumroad.com/l/yzgvvd" class="cta-button" data-gumroad-single-product="true">Get Instant Access ($37)</a>
+        </div>
+
+        <div style="margin-top: 100px; font-size: 12px; color: #94A3B8; text-align: center; border-top: 1px solid #E2E8F0; padding-top: 40px;">
+            <p>The content of this site is for informational purposes only and is not intended to replace professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition.</p>
+            <p>Testimonials are from real students, but results may vary. This product is for educational purposes.</p>
+        </div>
+
+    </div>
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script>
+  function loadHTML(id, file) {
+    fetch(file)
+      .then(response => { 
+        if (!response.ok) throw new Error("Network response was not ok"); 
+        return response.text(); 
+      })
+      .then(data => document.getElementById(id).innerHTML = data)
+      .catch(error => console.error('Error loading partial:', error));
+  }
+  
+  // NOTE: If this file is in the root, use 'partials/nav.html'.
+  // If in a subfolder, use '../partials/nav.html'.
+  loadHTML('header-placeholder', 'partials/nav.html');
+  loadHTML('footer-placeholder', 'partials/footer.html');
+</script>
+
+</body>
+      </html>
+  
