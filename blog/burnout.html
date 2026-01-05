@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#0F172A">
+    <title>Burnout & The Nervous System | Structure & State</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <style>
+      body { background-color: #F8FAFC; color: #334155; font-family: 'Merriweather', serif; line-height: 1.8; }
+      .article-container { max-width: 720px; margin: 60px auto 100px; padding: 0 20px; }
+      .article-header { text-align: center; margin-bottom: 60px; }
+      .category-tag { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.8rem; color: #0891B2; text-transform: uppercase; letter-spacing: 1.5px; display: block; margin-bottom: 15px; }
+      h1 { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 2.5rem; color: #0F172A; line-height: 1.2; margin-bottom: 20px; }
+      .subtitle { font-family: 'Open Sans', sans-serif; font-size: 1.2rem; color: #64748B; max-width: 600px; margin: 0 auto; line-height: 1.6; }
+      h2 { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.5rem; color: #0F172A; margin-top: 50px; margin-bottom: 20px; }
+      h3 { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 1.2rem; color: #1E293B; margin-top: 30px; margin-bottom: 10px; }
+      p { margin-bottom: 25px; font-size: 1.05rem; }
+      .insight-box { background: #fff; border-left: 4px solid #0891B2; padding: 30px; border-radius: 0 8px 8px 0; box-shadow: 0 10px 30px -10px rgba(0,0,0,0.05); margin: 40px 0; }
+      .insight-label { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.8rem; color: #0891B2; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; display: block; }
+      .insight-box p { margin-bottom: 0; font-style: italic; color: #475569; }
+      ul { padding-left: 20px; margin-bottom: 30px; }
+      li { margin-bottom: 12px; }
+      .cta-card { background: #0F172A; color: white; padding: 50px; border-radius: 16px; text-align: center; margin-top: 80px; box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.4); }
+      .cta-card h3 { font-family: 'Montserrat', sans-serif; font-size: 1.8rem; margin-bottom: 15px; color: white; }
+      .cta-card p { font-family: 'Open Sans', sans-serif; color: #94A3B8; margin-bottom: 30px; font-style: normal; }
+      .btn-white { background: white; color: #0F172A; padding: 15px 35px; border-radius: 6px; text-decoration: none; font-family: 'Montserrat', sans-serif; font-weight: 700; transition: transform 0.2s; display: inline-block; }
+      .btn-white:hover { transform: translateY(-3px); }
+      @media (max-width: 600px) { h1 { font-size: 2rem; } .article-container { margin-top: 40px; } }
+    </style>
+</head>
+
+<body>
+<div id="header-placeholder"></div>
+
+<main class="article-container">
+    
+    <header class="article-header">
+        <span class="category-tag">System Collapse</span>
+        <h1>Burnout & The Nervous System</h1>
+        <p class="subtitle">How chronic sympathetic load leads to the "High-Functioning Freeze" response.</p>
+    </header>
+
+    <hr style="border: 0; border-top: 1px solid #E2E8F0; margin-bottom: 50px;">
+
+    <p>We need to talk about the "I'm Fine" lie.</p>
+    <p>You know the one. Someone asks how you are, and you say "I'm good, just busy!" while internally you feel like a laptop that has 47 tabs open and the cooling fan is screaming.</p>
+    <p>Then, one random Tuesday, you spill a glass of water and just... stare at it. You don't clean it up. You just sit on the floor and think about moving to a goat farm in Peru. That isn't "laziness." That is biology.</p>
+
+    <div class="insight-box">
+        <span class="insight-label">The Circuit Breaker</span>
+        <p>Burnout is not an emotion. It is a safety mechanism. If you stay in Fight-or-Flight too long, your body slams on the emergency brake to prevent engine failure. This is Dorsal Vagal Shutdown.</p>
+    </div>
+
+    <h2>Why Vacations Usually Fail</h2>
+    <p>Have you ever gone on a vacation, expecting to relax, but instead you just felt numb? Or got sick immediately?</p>
+    <p>That is because you removed the adrenaline that was holding you together. If your internal switch is stuck in "Danger" mode, sitting on a beach just makes you an anxious person in a swimsuit.</p>
+
+    <h2>How to Actually Recover</h2>
+    <p>Recovery is not about "doing nothing." Recovery is active regulation.</p>
+    <ul>
+        <li><strong>Mechanical Decompression:</strong> Releasing the physical tension in the neck and diaphragm.</li>
+        <li><strong>Low-Stakes Movement:</strong> Walking without a podcast. Moving without a goal.</li>
+        <li><strong>Completing the Stress Cycle:</strong> Using the "Panic Eject" tools to flush the cortisol buildup.</li>
+    </ul>
+
+    <div class="cta-card">
+        <h3>Install the Manual Override</h3>
+        <p>Don't wait for the total system collapse. Learn to regulate now.</p>
+        <a href="vsl-bridge.html" class="btn-white">Start The Protocol</a>
+    </div>
+
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script>
+function loadHTML(id, file) {
+    fetch(file)
+      .then(response => { 
+        if (!response.ok) throw new Error("Network response was not ok"); 
+        return response.text(); 
+      })
+      .then(data => document.getElementById(id).innerHTML = data)
+      .catch(error => console.error('Error loading partial:', error));
+}
+
+// Correctly pointing to the partials folder
+loadHTML('header-placeholder', 'partials/nav.html');
+loadHTML('footer-placeholder', 'partials/footer.html');
+</script>
+    
+</body>
+</html>
